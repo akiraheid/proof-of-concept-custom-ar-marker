@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+	<!-- we import arjs version without NFT but with marker + location based support -->
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+	<!--
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+	-->
+	<body style="margin : 0px; overflow: hidden;">
+		<a-scene
+			vr-mode-ui="enabled: false;"
+			renderer="logarithmicDepthBuffer: true;"
+			arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+			embedded>
+			<!--
+			<a-assets>
+		        <video
+					id="rollercoaster"
+		      	    autoplay
+		      	    loop="true"
+		      	    src="https://arjs-cors-proxy.herokuapp.com/https://static.videezy.com/system/resources/previews/000/004/296/original/20_20Dragon_20Coaster_20Part_204.mp4">
+		        </video>
+			</a-assets>
+			-->
+		    <a-marker preset="hiro">
+		        <!--
+		        gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/akiraheid/proof-of-concept-custom-ar-marker/jal/gltf/character_witch.gltf"
+		        gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+		        -->
+		        <a-entity
+		            position="0 0 1"
+		            scale="0.5 0.5 0.5"
+		            gltf-model="https://arjs-cors-proxy.herokuapp.com/https://akiraheid.github.io/proof-of-concept-custom-ar-marker/render/orb.glb"
+		        ></a-entity>
+		        <a-image
+		      	  position="-1 0 0"
+				  width="1"
+				  height="1.759"
+		      	  src="https://arjs-cors-proxy.herokuapp.com/https://akiraheid.github.io/proof-of-concept-custom-ar-marker/render/judy.png">
+		        </a-image>
+				<a-video
+					width="1.777"
+					height="1"
+					position="1 0 0"
+		      	    src="https://arjs-cors-proxy.herokuapp.com/https://static.videezy.com/system/resources/previews/000/004/296/original/20_20Dragon_20Coaster_20Part_204.mp4">
+				</a-video>
+		    </a-marker>
+			<a-nft
+                type="nft"
+				url="https://arjs-cors-proxy.herokuapp.com/https://akiraheid.github.io/proof-of-concept-custom-ar-marker/jal/jal"
+                smooth="true"
+                smoothCount="10"
+                smoothTolerance=".01"
+                smoothThreshold="5">
+                <a-entity
+                  gltf-model="https://arjs-cors-proxy.herokuapp.com/https://akiraheid.github.io/proof-of-concept-custom-ar-marker/render/house.glb"
+                  scale="5 5 5"
+                  position="50 150 0"
+                >
+                </a-entity>
+              </a-nft>
+		    <a-entity camera></a-entity>
+		</a-scene>
+    </body>
+</html>
